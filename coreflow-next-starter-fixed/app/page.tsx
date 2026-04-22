@@ -265,25 +265,65 @@ export default function HomePage() {
             <p>No son bloques de texto aleatorios. Son resultados claros, prácticos y listos para revisar, ajustar y publicar.</p>
           </div>
 
-          <div className="examples-grid">
-            {[
-              ["Framework", "Estrategia mensual", ["Objetivo: mejorar posicionamiento", "Pilares: educación, confianza, oferta", "Cadencia: 4 reels / 2 carruseles / 3 sets de stories"]],
-              ["Ideación", "Banco de ideas", ["5 errores que tu audiencia está cometiendo", "Behind the scenes de tu proceso", "Un post simple de antes / después"]],
-              ["Writing", "Caption generado", ["Línea de apertura fuerte", "Texto principal más limpio", "CTA alineado con la voz de la marca"]],
-              ["Short-form", "Guion para reel", ["Hook en los primeros 2 segundos", "Estructura rápida de valor", "Cierre con CTA accionable"]],
-              ["Calendario", "Plan semanal", ["Lun — reel de autoridad", "Mié — carrusel educativo", "Vie — secuencia de stories para convertir"]]
-            ].map(([eyebrow, title, items]) => (
-              <article className="example-card reveal" key={title}>
-                <div className="eyebrow">{eyebrow}</div>
-                <h3>{title}</h3>
-                <ul className="example-list">
-                  {(items as string[]).map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
+<div className="examples-grid">
+  {([
+    [
+      "Framework",
+      "Estrategia mensual",
+      [
+        "Objetivo: mejorar posicionamiento",
+        "Pilares: educación, confianza, oferta",
+        "Cadencia: 4 reels / 2 carruseles / 3 sets de stories",
+      ],
+    ],
+    [
+      "Ideación",
+      "Banco de ideas",
+      [
+        "5 errores que tu audiencia está cometiendo",
+        "Behind the scenes de tu proceso",
+        "Un post simple de antes / después",
+      ],
+    ],
+    [
+      "Writing",
+      "Caption generado",
+      [
+        "Línea de apertura fuerte",
+        "Texto principal más limpio",
+        "CTA alineado con la voz de la marca",
+      ],
+    ],
+    [
+      "Short-form",
+      "Guion para reel",
+      [
+        "Hook en los primeros 2 segundos",
+        "Estructura rápida de valor",
+        "Cierre con CTA accionable",
+      ],
+    ],
+    [
+      "Calendario",
+      "Plan semanal",
+      [
+        "Lun — reel de autoridad",
+        "Mié — carrusel educativo",
+        "Vie — secuencia de stories para convertir",
+      ],
+    ],
+  ] as [string, string, string[]][]).map(([eyebrow, title, items]) => (
+    <article className="example-card reveal" key={title}>
+      <div className="eyebrow">{eyebrow}</div>
+      <h3>{title}</h3>
+      <ul className="example-list">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </article>
+  ))}
+</div>
         </section>
 
         <section className="section" id="references">
